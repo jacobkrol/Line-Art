@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wolfgang MazArt</title>
+    <meta name="description" content="A custom maze and path generator for the web." />
+    <meta name="author" name="kroljs.com" />
+    <script type="text/javascript" src="js-main.js"></script>
+    <script type="text/javascript" src="js-data.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="grid">
+        <div class="row center">
+            <h1>Wolfgang MazArt</h1>
+        </div>
+        
+        <div class="row center">
+            <div id="controls" class="col center">
+                <div class="row">
+                    <div class="col center">
+                        <label for="height">Height:&nbsp;
+                        <input type="number" id="height" max="400" min="1" value="11" /></label>
+                        <label for="width">Width:&nbsp;
+                        <input type="number" id="width" max="400" min="1" value="11" /></label>
+                        <label for="fps">FPS:&nbsp;
+                        <input type="number" id="fps" max="1000" min="1" value="20" /></label>
+                        <label for="cursorx">Start at (x):&nbsp;
+                        <input type="number" id="cursorx" max="399" min="0" value="5" /></label>
+                        <label for="cursory">Start at (y):&nbsp;
+                        <input type="number" id="cursory" max="399" min="0" value="5" /></label>
+                    </div>
+                    <div class="col center">
+                        <label for="griddisplay">Show Grid:&nbsp;
+                        <input type="checkbox" id="griddisplay" onChange="draw()" checked /></label>
+                        <label for="imgdisplay">Show Image:&nbsp;
+                        <input type="checkbox" id="imgdisplay" onChange="toggleImg()" unchecked /></label>
+                        <label for="linedisplay">Show Line:&nbsp;
+                        <input type="checkbox" id="linedisplay" onChange="draw()" checked /></label>
+                        <label for="roundline">Round Line:&nbsp;
+                        <input type="checkbox" id="roundline" onChange="draw()" checked /></label>
+                        <label for="mazedisplay">Show Maze:&nbsp;
+                        <input type="checkbox" id="mazedisplay" onChange="draw()" checked /></label>
+                        <label for="wallsdisplay">Show Walls:&nbsp;
+                        <input type="checkbox" id="wallsdisplay" onChange="draw()" checked /></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="button" value="Refresh Grid" onClick="refreshGrid()" />
+                    <input type="button" value="Start Animation" onClick="startAnimation()" />
+                    <input type="button" value="Save Grid" onClick="saveGrid()" />
+                </div>
+            </div>
+            
+            <div id="drawing" class="col center">
+                <div class="row">
+                    <input id="pointcursor" class="selected" type="button" value="Point" onClick="changeCursor(0)" />
+                    <input id="pencursor" type="button" value="Pen" onClick="changeCursor(1)" />
+                    <input id="erasercursor" type="button" value="Eraser" onClick="changeCursor(2)" />
+                </div>
+                <div id="canvas">
+                    <canvas id="gc" width=800 height=800></canvas>
+                    <img id="img" src="" draggable="false" />
+                </div>
+            </div>
+        </div>
+        
+        <p id="output"></p>
+
+        <footer class="row center">
+            <p>Custom Maze & Line Generator</p>
+            <star></star>
+            <a href="https://kroljs.com" target="_blank" rel="noopener noreferrer">Jacob Krol</a>
+            <star></star>
+            <p>Copyright 2021</p>
+        </footer>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+    height: 100%;
+    margin: 1em 2em 2em;
+    background-color: rgb(255,248,245);
+}
+
+label {
+    display: block;
+    margin: 0.5em;
+}
+input[type="button"] {
+    margin: 0.5em;
+    font-size: 1rem;
+}
+#canvas {
+    position: relative;
+}
+#canvas img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    height: 800px;
+    visibility: hidden;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+}
+.row.center, .col.center {
+    justify-content: center;
+}
+
+#drawing {
+    border: 5px solid rgb(128, 0, 128);
+    border-radius: 0 20px 20px 0;
+    background-color: rgb(240, 229, 243);
+    padding: 15px;
+}
+
+#controls {
+    border: 5px solid rgb(30, 66, 185);
+    border-radius: 20px 0 0 20px;
+    background-color: rgb(225, 229, 241);
+}
+
+input[type="button"] {
+    min-height: 50px;
+    min-width: 70px;
+    padding: auto;
+    background-color: rgb(226, 226, 226);
+    border: 2px solid rgb(80, 80, 80);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(70, 70, 70);
+    margin: 0 8px 15px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+input[type="button"].selected {
+    font-weight: bold;
+    border-width: 4px;
+    background-color: rgb(225, 197, 228);
+}
+
+
+#drawing input[type="button"] {
+    background-color: rgb(229, 219, 230);
+    border-color: rgb(230, 85, 235);
+}
+
+#controls input[type="button"] {
+    margin: 15px 8px;
+    min-height: 40px;
+    background-color: rgb(220, 219, 230);
+    border-color: rgb(85, 88, 235);
+}
+
+#controls input[type="button"].selected {
+    font-weight: bold;
+    border-width: 4px;
+    background-color: rgb(197, 199, 228);
+}
+
+star {
+    margin: 0 12px;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+}
+star::before {
+    content: '\2605';
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 20px;
+}
+footer * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
